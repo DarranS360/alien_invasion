@@ -1,18 +1,21 @@
 import sys
+
 import pygame
+
 from settings import Settings
 from ship import Ship
 
 
 class AlienInvasion:
-    """Overall class to manage game assets and behaviours."""
+    """Overall class to manage game assets and behavior."""
 
-    def _init_(self):
-        """Initialise the game, and create game resources."""
+    def __init__(self):
+        """Initialize the game, and create game resources."""
         pygame.init()
         self.settings = Settings()
 
-        self.screen = pygame.display.set_mode(self.settings.screen_width. self.settings.screen_height)
+        self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
 
         self.ship = Ship(self)
@@ -32,7 +35,8 @@ class AlienInvasion:
             # Make the most recently drawn screen visible.
             pygame.display.flip()
 
-"""if _name_ == '_main_':
+
+if __name__ == '__main__':
     # Make a game instance, and run the game.
     ai = AlienInvasion()
-    ai.run_game()"""
+    ai.run_game()
